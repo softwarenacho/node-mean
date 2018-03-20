@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Nacho's say something</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <style type="text/css">
+
+    .container-fluid {
+      height: 100vh;
+    }
+
+    .row {
+      width: 100%;
+      margin: 0px !important;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .input-placeholder {
+      padding-top: 12.5px !important;
+      width: 100%;
+    }
+
+    .placeholder-input {
+      display: flex;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      font-size: 20px;
+      z-index: 2;
+      margin-left: 2.5px;
+      color: darkgrey;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .input-placeholder:focus + .placeholder-input {
+      animation: placeholder-up 0.5s forwards;
+    }
+
+    .placeholder-input-up {
+      animation: placeholder-up 0.5s forwards;
+    }
+
+    @keyframes placeholder-up {
+      to {
+        font-size: 14px;
+        transform: translateY(-5px);
+      }
+    }
+
+    textarea {
+      resize: none;
+      overflow: hidden;
+      min-height: 50px;
+      max-height: 100px;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus
+    input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover
+    textarea:-webkit-autofill:focus{
+      border-bottom: 1px solid rgb(250, 255, 189);
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container-fluid d-flex">
+    <div class="row">
+      <div class="col-xs-12 col-lg-6 d-flex justify-content-center align-items-center">
+        <h1>Save your name and say something...</h1>
+      </div>
+      <div class="col-xs-12 col-lg-6 d-flex justify-content-center align-items-center">
+        <form method="post" action="/addText">
+          <div class="form-group">
+            <input class="input-placeholder" type="text" name="name" placeholder="" required>
+            <span class="placeholder-input placeholder-input-up">Enter your name...</span>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control input-placeholder" onkeyup="auto_grow(this)" rows="1" id="txt"></textarea>
+            <span class="placeholder-input placeholder-input-up">Say something...</span>
+          </div>
+          <input class="btn btn-block btn-info btn-lg" type="submit" value="Publish">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+    function auto_grow(element) {
+      element.style.height = "5px";
+      element.style.height = (element.scrollHeight)+"px";
+    }
+
+  </script>
+
+</body>
+</html>

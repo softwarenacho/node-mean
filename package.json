@@ -1,0 +1,29 @@
+{
+  "name": "mean",
+  "version": "0.0.1",
+  "description": "Node application with MEAN stack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softwarenacho/node-mean.git"
+  },
+  "keywords": [
+    "node",
+    "mongodb"
+  ],
+  "author": "Nacho Betancourt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/softwarenacho/node-mean/issues"
+  },
+  "homepage": "https://github.com/softwarenacho/node-mean#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.11",
+    "npm": "^5.7.1"
+  }
+}
